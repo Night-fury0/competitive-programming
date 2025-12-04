@@ -1,0 +1,21 @@
+from math import floor
+
+with open('test.txt', 'r') as f:
+    active = 50
+    count = 0
+    for line in f:
+        no = int(line[1:])
+        if line[0] == 'L':
+           count += abs(floor((active - no)/100))
+           if active = 0:
+               count -= 1
+           active = (active - no) % 100
+        if line[0] == 'R':
+           count += floor((active+no)/100)
+           active = (active + no) % 100
+        print(f"at {active}, faced zero {count} times")
+
+    print(count)
+
+
+ 
